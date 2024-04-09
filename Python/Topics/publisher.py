@@ -5,7 +5,7 @@ from geometry_msgs.msg import Twist
 class VelocityPublisher(Node):
 
     def __init__(self):
-        super().__init__('velocity_publisher')
+        super().__init__('velocity_publisher') # invoke the constructor of the parent class
         self.publisher_ = self.create_publisher(Twist, '/cmd_vel', 10)
         timer_period = 0.5  # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
